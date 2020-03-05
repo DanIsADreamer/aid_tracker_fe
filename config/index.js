@@ -1,4 +1,5 @@
 // NOTE 在 sass 中通过别名（@ 或 ~）引用需要指定路径
+// eslint-disable-next-line import/no-commonjs
 const path = require('path')
 
 const sassImporter = function(url) {
