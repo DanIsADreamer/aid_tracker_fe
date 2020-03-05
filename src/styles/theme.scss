@@ -1,0 +1,14 @@
+/* Custom Theme */
+$color-brand: #6190e8;
+$color-brand-light: #89acee;
+$color-brand-dark: #4e73ba;
+
+// taro-ui 请按需引入需要的样式
+@import "~taro-ui/dist/style/components/button.scss";
+@import "~taro-ui/dist/style/components/loading.scss";
+
+$h1: 42px;
+$h2: 36px;
+$h3: 32px;
+$h4: 28px;
+$h5: 24px;
