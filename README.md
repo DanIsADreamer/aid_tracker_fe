@@ -1,5 +1,13 @@
 # Aid Tracker
 
+> 请严格要求与对待
+
+## 代码提交规范：
+
+- git add / git commit（commit 规范见下面）
+- git pull --rebase
+- git push
+
 ## Git commit message
 
 - template: `type: [name] content`
