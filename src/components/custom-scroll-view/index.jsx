@@ -10,7 +10,7 @@ export default class CustomScrollView extends Component {
     hasMore: true,
     isOpenRefresh: true,
     isNothing: false,
-    height: 0,
+    height: 42,
     handleRefresh: () => {},
     loadRecommend: () => {}
   }

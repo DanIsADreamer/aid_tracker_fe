@@ -14,8 +14,8 @@ class App extends Component {
     pages: [
       'pages/login/index',
       'pages/index/index',
-      'pages/me/index',
       'pages/my-project/index',
+      'pages/me/index',
       'pages/registered/index'
     ],
     window: {
@@ -32,19 +32,19 @@ class App extends Component {
           pagePath: 'pages/index/index',
           iconPath: './assets/images/home.png',
           selectedIconPath: './assets/images/home-selected.png',
-          text: '首页'
+          text: '需求列表'
         },
         {
           pagePath: 'pages/my-project/index',
           iconPath: './assets/images/publish.png',
           selectedIconPath: './assets/images/publish-selected.png',
-          text: '发布'
+          text: '我的项目'
         },
         {
           pagePath: 'pages/me/index',
           iconPath: './assets/images/me.png',
           selectedIconPath: './assets/images/me-selected.png',
-          text: '我的'
+          text: '个人中心'
         }
       ]
     }

@@ -21,7 +21,7 @@ const ROLE = {
 }
 
 export default class Index extends Component {
-  componentWillMount() {
+  componentDidMount() {
     ROLE[getGlobalData('role')]()
   }
 
