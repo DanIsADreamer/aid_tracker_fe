@@ -68,7 +68,7 @@ export default class CardContent extends Component {
         </View>
         <View className='card-who'>
           {sponsor && this.renderSponsor(sponsor)}
-          {position && this.renderSponsor(position)}
+          {position && this.renderPosition(position)}
         </View>
       </View>
     )
