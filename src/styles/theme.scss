@@ -6,7 +6,8 @@ $color-grey: #ACA4A4;
 
 // taro-ui 请按需引入需要的样式
 @import "~taro-ui/dist/style/components/button.scss";
-@import "~taro-ui/dist/style/components/loading.scss";
+@import "~taro-ui/dist/style/components/activity-indicator.scss";
+@import '~taro-ui/dist/style/components/loading.scss';
 
 $h1: 42px;
 $h2: 36px;

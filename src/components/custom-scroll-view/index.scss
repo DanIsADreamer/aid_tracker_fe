@@ -1,0 +1,21 @@
+@import '@styles/theme.scss';
+
+.loading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  font-size: 28px;
+}
+
+.loading-txt {
+  color: $color-grey;
+}
+
+.nothing {
+  margin-top: 150px;
+}
+
+.nothing {
+  height: calc(100% - 36px);
+}

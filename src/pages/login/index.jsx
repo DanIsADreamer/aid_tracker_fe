@@ -2,7 +2,7 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 import { setGlobalData } from '@utils/global-data'
-import request from '@services/api'
+// import request from '@services/api'
 import './index.scss'
 
 export default class Index extends Component {
@@ -11,9 +11,10 @@ export default class Index extends Component {
   config = {}
 
   handleClick(role) {
-    request.get('/api/user').then(res => {
-      console.log(res)
-    })
+    console.log(role)
+    // request.get('/api/user').then(res => {
+    //   console.log(res)
+    // })
     setGlobalData('role', role)
     Taro.switchTab({
       url: '/pages/index/index'

@@ -1,5 +1,5 @@
 const globalData = {
-  role: 'Donor'
+  role: ''
 }
 
 export const setGlobalData = (key, value) => {
