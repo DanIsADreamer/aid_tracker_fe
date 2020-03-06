@@ -15,7 +15,8 @@ class App extends Component {
       'pages/login/index',
       'pages/index/index',
       'pages/me/index',
-      'pages/my-project/index'
+      'pages/my-project/index',
+      'pages/registered/index'
     ],
     window: {
       backgroundTextStyle: 'light',

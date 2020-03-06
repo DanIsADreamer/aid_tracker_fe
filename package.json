@@ -20,6 +20,7 @@
     ]
   },
   "scripts": {
+    "mock": "mocker ./mock",
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
     "build:alipay": "taro build --type alipay",
@@ -75,6 +76,8 @@
     "eslint-plugin-react-hooks": "^1.6.1",
     "eslint-plugin-taro": "2.0.5",
     "husky": "^4.2.3",
+    "mocker-api": "^1.13.1",
+    "mockjs": "^1.1.0",
     "stylelint": "9.3.0",
     "stylelint-config-taro-rn": "2.0.5",
     "stylelint-taro-rn": "2.0.5"
