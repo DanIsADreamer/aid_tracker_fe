@@ -25,13 +25,7 @@ class App extends Component {
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
-    },
-    subPackages: [
-      {
-        root: 'pages/donator/home',
-        pages: ['pages/donator/', 'pages/dog']
-      }
-    ]
+    }
   }
 
   // 在 App 类中的 render() 函数没有实际作用
