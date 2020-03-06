@@ -10,6 +10,7 @@ export default class CustomScrollView extends Component {
     hasMore: true,
     isOpenRefresh: true,
     isNothing: false,
+    height: 0,
     handleRefresh: () => {},
     loadRecommend: () => {}
   }
@@ -25,13 +26,14 @@ export default class CustomScrollView extends Component {
       isOpenRefresh,
       isNothing,
       onPullDownRefresh,
+      height,
       onScrollToLower
     } = this.props
 
     return (
       <ScrollView
         scrollY
-        style={{ height: windowHeight - 46 - 46 + 'px' }}
+        style={{ height: windowHeight - height + 'px' }}
         refresherEnabled
         refresherTriggered={isOpenRefresh}
         onRefresherRefresh={onPullDownRefresh}
@@ -43,7 +45,13 @@ export default class CustomScrollView extends Component {
             <AtActivityIndicator content='加载中...'></AtActivityIndicator>
           </View>
         )}
-        {isNothing && <View className='loading nothing'><Text className='loading-txt'>现在还没有分享，快来创建一条吧！</Text></View>}
+        {isNothing && (
+          <View className='loading nothing'>
+            <Text className='loading-txt'>
+              现在还没有分享，快来创建一条吧！
+            </Text>
+          </View>
+        )}
         {!hasMore && (
           <View className={classNames({ loading: true })}>
             <Text className='loading-txt'>没有更多了</Text>

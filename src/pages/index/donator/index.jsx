@@ -14,7 +14,12 @@ export default class Donator extends Component {
         isCertification: true,
         status: ''
       }
-    ]
+    ],
+    isOpenRefresh: true,
+    loadingMore: false,
+    loadingButton: false,
+    hasMore: true,
+    cursor: ''
   }
 
   // 初始化状态
@@ -85,7 +90,9 @@ export default class Donator extends Component {
         isOpenRefresh={isOpenRefresh}
         onScrollToLower={this.loadRecommend}
         onPullDownRefresh={this.handleRefresh}
-      ></CustomScrollView>
+      >
+        123
+      </CustomScrollView>
     )
   }
 }
