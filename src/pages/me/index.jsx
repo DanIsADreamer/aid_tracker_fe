@@ -4,21 +4,21 @@ import './index.scss'
 
 export default class Index extends Component {
   componentWillMount() {}
-  
+
   componentDidMount() {}
-  
+
   componentWillUnmount() {}
-  
+
   componentDidShow() {}
-  
+
   componentDidHide() {}
-  
+
   config = {}
-  
+
   render() {
     return (
       <View>
-        <Text>Hello world!</Text>
+        <Text>个人中心</Text>
       </View>
     )
   }

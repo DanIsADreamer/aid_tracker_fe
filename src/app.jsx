@@ -10,21 +10,42 @@ import './app.scss'
 // }
 
 class App extends Component {
-  componentDidMount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
-
-  componentDidCatchError() {}
-
   config = {
-    pages: ['pages/index/index'],
+    pages: [
+      'pages/login/index',
+      'pages/index/index',
+      'pages/me/index',
+      'pages/my-project/index'
+    ],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
       navigationBarTitleText: 'WeChat',
       navigationBarTextStyle: 'black'
+    },
+    tabBar: {
+      borderStyle: 'black',
+      selectedColor: '#5476FD',
+      list: [
+        {
+          pagePath: 'pages/index/index',
+          iconPath: './assets/images/home.png',
+          selectedIconPath: './assets/images/home-selected.png',
+          text: '首页'
+        },
+        {
+          pagePath: 'pages/my-project/index',
+          iconPath: './assets/images/publish.png',
+          selectedIconPath: './assets/images/publish-selected.png',
+          text: '发布'
+        },
+        {
+          pagePath: 'pages/me/index',
+          iconPath: './assets/images/me.png',
+          selectedIconPath: './assets/images/me-selected.png',
+          text: '我的'
+        }
+      ]
     }
   }
 

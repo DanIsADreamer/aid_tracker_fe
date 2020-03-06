@@ -18,7 +18,7 @@ export default class Index extends Component {
   render() {
     return (
       <View>
-        <Text>Hello world!</Text>
+        <Text>My Project</Text>
       </View>
     )
   }

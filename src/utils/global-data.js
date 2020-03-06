@@ -1,4 +1,6 @@
-const sessionGlobalData = {}
+const sessionGlobalData = {
+  role: 'Donor'
+}
 
 export const setSessionGlobalData = (key, value) => {
   sessionGlobalData[key] = value
