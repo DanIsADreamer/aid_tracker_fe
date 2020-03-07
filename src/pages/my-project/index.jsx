@@ -8,7 +8,9 @@ import './index.scss'
 export default class Index extends Component {
   componentWillMount() {}
 
-  config = {}
+  config = {
+    navigationBarTitleText: '我的项目'
+  }
 
   render() {
     const isDonor = getGlobalData('role') === 'Donor'

@@ -19,6 +19,7 @@ class App extends Component {
       'pages/registered/index',
       'pages/detail/donator/detail-receipt/index',
       'pages/detail/donator/detail-preparation/index',
+      'pages/detail/donator/detail-doing/index',
       'pages/edit/donator/donate-form/index'
     ],
     window: {

@@ -6,7 +6,7 @@
   align-items: center;
 
   .logo {
-    margin-top: 200px;
+    margin-top: 250px;
     width: 200px;
     height: 200px;
     background: $color-grey;
@@ -17,10 +17,11 @@
 
   .title {
     padding: 20px 0;
+    font-size: 36px;
   }
 
   .button {
-    margin-top: 150px;
+    margin-top: 250px;
 
     .btn-top,
     .btn-bottom {
