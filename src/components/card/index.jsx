@@ -7,7 +7,11 @@ export default class Index extends Component {
   static defaultProps = {}
 
   render() {
-    const { children } = this.props
-    return <View className='card'>{children}</View>
+    const { children, onClick } = this.props
+    return (
+      <View className='card' onClick={onClick}>
+        {children}
+      </View>
+    )
   }
 }

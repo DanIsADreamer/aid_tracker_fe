@@ -11,7 +11,7 @@ export default class CardProgress extends Component {
 
   render() {
     const { totalCount, finishCount } = this.props
-    const percent = (finishCount / totalCount) * 100
+    const percent = (Number(finishCount) / Number(totalCount)) * 100
     const difference = totalCount - finishCount
     return (
       <View className='card-progress'>

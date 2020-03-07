@@ -120,6 +120,11 @@ export default class Donator extends Component {
       value: value
     })
   }
+  handleCardClick = () => {
+    Taro.navigateTo({
+      url: '/pages/detail/donator/detail-preparation/index?id=1'
+    })
+  }
 
   render() {
     const { list, isOpenRefresh, loadingMore, hasMore } = this.state
@@ -138,7 +143,7 @@ export default class Donator extends Component {
           onPullDownRefresh={this.handleRefresh}
         >
           {list.map(item => (
-            <Card key={item.id}>
+            <Card key={item.id} onClick={this.handleCardClick}>
               <CardTitle title={item.title}></CardTitle>
               <CardStatus></CardStatus>
               <CardProgress

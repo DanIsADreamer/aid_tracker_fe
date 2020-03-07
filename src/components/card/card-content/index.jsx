@@ -44,6 +44,10 @@ export default class CardContent extends Component {
     return <View>所在地区: {position}</View>
   }
 
+  renderAidTarget(value) {
+    return <View>目标援助对象: {value}</View>
+  }
+
   render() {
     const {
       publishTime,
@@ -51,6 +55,7 @@ export default class CardContent extends Component {
       demandSupplies,
       totalDemand,
       planToDonate,
+      aidTarget,
       sponsor,
       position
     } = this.props
@@ -69,6 +74,7 @@ export default class CardContent extends Component {
         <View className='card-who'>
           {sponsor && this.renderSponsor(sponsor)}
           {position && this.renderPosition(position)}
+          {aidTarget && this.renderAidTarget(aidTarget)}
         </View>
       </View>
     )

@@ -12,11 +12,13 @@ import './app.scss'
 class App extends Component {
   config = {
     pages: [
-      'pages/login/index',
+      // 'pages/login/index',
       'pages/index/index',
+      'pages/detail/donator/detail-preparation/index',
       'pages/my-project/index',
       'pages/me/index',
-      'pages/registered/index'
+      'pages/registered/index',
+      'pages/edit/donator/donate-form/index'
     ],
     window: {
       backgroundTextStyle: 'light',
