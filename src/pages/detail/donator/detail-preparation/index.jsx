@@ -62,6 +62,8 @@ export default class Index extends Component {
           </View>
         </View>
 
+        <View className='occupy-position'></View>
+
         <View className='btn'>
           <AtButton type='primary' onClick={this.handleClick}>
             我要捐赠

@@ -1,7 +1,8 @@
 import Taro, { Component } from '@tarojs/taro'
-import { View, Text } from '@tarojs/components'
+import { View, Text, Image } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 import { setGlobalData } from '@utils/global-data'
+import logo from '@assets/images/logo.png'
 // import request from '@services/api'
 import './index.scss'
 
@@ -24,7 +25,7 @@ export default class Index extends Component {
   render() {
     return (
       <View className='login'>
-        <View className='logo'>logo</View>
+        <Image className='logo' src={logo}></Image>
         <Text className='title'>Aid Tracker捐赠直连</Text>
         <View className='button'>
           <AtButton

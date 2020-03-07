@@ -60,7 +60,7 @@ export default class Index extends Component {
   handleClick = () => {
     console.log(this.state.detail)
     Taro.navigateTo({
-      url: 'pages/detail/donator/detail-receipt/index?id: 1'
+      url: '/pages/detail/donator/detail-receipt/index?id: 1'
     })
   }
 

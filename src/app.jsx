@@ -12,7 +12,7 @@ import './app.scss'
 class App extends Component {
   config = {
     pages: [
-      // 'pages/login/index',
+      'pages/login/index',
       'pages/index/index',
       'pages/my-project/index',
       'pages/me/index',
@@ -29,24 +29,24 @@ class App extends Component {
     },
     tabBar: {
       borderStyle: 'black',
-      selectedColor: '#5476FD',
+      selectedColor: '#454166',
       list: [
         {
           pagePath: 'pages/index/index',
-          iconPath: './assets/images/home.png',
-          selectedIconPath: './assets/images/home-selected.png',
+          iconPath: './assets/images/bar_need_list.png',
+          selectedIconPath: './assets/images/bar_need_list_active.png',
           text: '需求列表'
         },
         {
           pagePath: 'pages/my-project/index',
-          iconPath: './assets/images/publish.png',
-          selectedIconPath: './assets/images/publish-selected.png',
+          iconPath: './assets/images/bar_my_project.png',
+          selectedIconPath: './assets/images/bar_my_project_active.png',
           text: '我的项目'
         },
         {
           pagePath: 'pages/me/index',
-          iconPath: './assets/images/me.png',
-          selectedIconPath: './assets/images/me-selected.png',
+          iconPath: './assets/images/bar_user_center.png',
+          selectedIconPath: './assets/images/bar_user_center_active.png',
           text: '个人中心'
         }
       ]

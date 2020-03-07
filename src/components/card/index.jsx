@@ -4,12 +4,15 @@ import { View } from '@tarojs/components'
 import './index.scss'
 
 export default class Index extends Component {
-  static defaultProps = {}
+  static defaultProps = {
+    onClick: () => {},
+    customStyle: {}
+  }
 
   render() {
-    const { children, onClick } = this.props
+    const { children, onClick, customStyle } = this.props
     return (
-      <View className='card' onClick={onClick}>
+      <View className='card' style={customStyle} onClick={onClick}>
         {children}
       </View>
     )
