@@ -17,6 +17,12 @@
   npm run dev:weapp
 ```
 
+- 执行 mock
+
+```
+  npm run mock
+```
+
 - 打开小程序开发者工具即可看到
 
 ## 代码提交规范：
