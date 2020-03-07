@@ -12,7 +12,9 @@ export default class Index extends Component {
 
   componentDidMount() {}
 
-  config = {}
+  config = {
+    navigationBarTitleText: '需求详情'
+  }
 
   getDetailId() {
     return this.$router.params.id

@@ -14,10 +14,11 @@ class App extends Component {
     pages: [
       // 'pages/login/index',
       'pages/index/index',
-      'pages/detail/donator/detail-preparation/index',
       'pages/my-project/index',
       'pages/me/index',
       'pages/registered/index',
+      'pages/detail/donator/detail-receipt/index',
+      'pages/detail/donator/detail-preparation/index',
       'pages/edit/donator/donate-form/index'
     ],
     window: {
