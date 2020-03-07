@@ -1,8 +1,8 @@
 import Taro from '@tarojs/taro'
 import { getGlobalData } from './global-data'
 
-const DONOR = 'Donor'
-const RECEIVER = 'Receiver'
+const DONOR = 'supplier'
+const RECEIVER = 'demander'
 
 export const isDonor = () => getGlobalData('role') === DONOR
 export const isReceiver = () => getGlobalData('role') === RECEIVER
@@ -27,5 +27,6 @@ const ROLE = {
 }
 
 export const setTabbar = () => {
+  console.log(getGlobalData('accessToken'))
   ROLE[getGlobalData('role')]()
 }

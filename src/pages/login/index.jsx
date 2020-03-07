@@ -2,27 +2,35 @@ import Taro, { Component } from '@tarojs/taro'
 import { View, Text, Image } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 import { setGlobalData } from '@utils/global-data'
+import { getAuthUser } from '@utils/auth'
 import logo from '@assets/images/logo.png'
 // import request from '@services/api'
 import './index.scss'
+import { getGlobalData } from '../../utils/global-data'
 
 export default class Index extends Component {
   componentDidMount() {}
 
   config = {}
 
-  handleClick(role) {
-    console.log(role)
-    // request.get('/api/user').then(res => {
-    //   console.log(res)
-    // })
-    setGlobalData('role', role)
-    Taro.switchTab({
-      url: '/pages/index/index'
-    })
-    // Taro.navigateTo({
-    //   url: '/pages/registered/index'
-    // })
+  onGetUserInfo(currentRole) {
+    setGlobalData('role', currentRole)
+    getAuthUser()
+      .then(res => {
+        setGlobalData('role', currentRole)
+        console.log(getGlobalData('role'))
+        if (!res.role || res.role === '' || res.role !== currentRole) {
+          Taro.navigateTo({
+            url: `/pages/registered/index?id=${res.id}`
+          })
+        }
+        Taro.switchTab({
+          url: '/pages/index/index'
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   render() {
@@ -34,14 +42,16 @@ export default class Index extends Component {
           <AtButton
             type='primary'
             className='btn-top'
-            onClick={this.handleClick.bind(this, 'Donor')}
+            openType='getUserInfo'
+            onGetUserInfo={this.onGetUserInfo.bind(this, 'supplier')}
           >
             我是捐赠方
           </AtButton>
           <AtButton
             type='primary'
             className='btn-bottom'
-            onClick={this.handleClick.bind(this, 'Receiver')}
+            openType='getUserInfo'
+            onGetUserInfo={this.onGetUserInfo.bind(this, 'demander')}
           >
             我是受赠方
           </AtButton>

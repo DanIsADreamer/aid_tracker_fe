@@ -1,5 +1,7 @@
 import Taro from '@tarojs/taro'
 import { MSG_GET_USERINFO_OK } from '@constants/status.js'
+import request from '@services/api.js'
+import { setGlobalData } from './global-data'
 
 export function getUserInfo() {
   return new Promise((resolve, reject) => {
@@ -13,14 +15,26 @@ export function getUserInfo() {
 }
 
 export function login(nickName, avatarUrl) {
-  console.log(nickName, avatarUrl)
   return new Promise((resolve, reject) => {
     Taro.login({
       success: function(res) {
         if (res.code) {
-          console.log(res.code)
           //发起网络请求
-          resolve(res.code)
+          request
+            .post('/api-user-auth', {
+              authCode: res.code,
+              userInfo: { nickName, avatarUrl }
+            })
+            .then(r => {
+              console.log(r)
+              if (r.data.role && r.data.role !== '') {
+                setGlobalData('role', r.data.role)
+                setGlobalData('accessToken', r.header.accessToken)
+                setGlobalData('baseToken', r.header.baseToken)
+              }
+              resolve(r.data)
+            })
+            .catch(reject)
         } else {
           console.log('登录失败！' + res.errMsg)
           reject()

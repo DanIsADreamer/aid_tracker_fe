@@ -1,8 +1,12 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View, Text } from '@tarojs/components'
+import { AtButton } from 'taro-ui'
 import CustomInput from '@components/custom-input'
 import classNames from 'classnames'
+import request from '@services/api'
+import eventEmitter from '@utils/event'
 import './index.scss'
+import { getGlobalData, setGlobalData } from '../../utils/global-data'
 
 export default class Index extends Component {
   state = {
@@ -34,6 +38,9 @@ export default class Index extends Component {
       }
     ],
     selectValue: ''
+    // orgName: '',
+    // orgType: '',
+    // supplierLocation: ''
   }
   config = {
     navigationBarTitleText: '注册'
@@ -65,22 +72,54 @@ export default class Index extends Component {
     )
   }
 
+  handleChange = (value, key) => {
+    this.setState({
+      [key]: value
+    })
+  }
+
+  getId() {
+    return this.$router.params.id
+  }
+
+  handleSubmit = async () => {
+    const res = await request.post('/api-user-fill', {
+      id: this.getId(),
+      role: getGlobalData('role'),
+      orgName: 'lalallaal'
+    })
+    setGlobalData('userInfo', res.data)
+    setGlobalData('role', res.data.role)
+    eventEmitter.emit('refresh')
+    Taro.switchTab({
+      url: '/pages/index/index'
+    })
+  }
+
   render() {
-    const { list } = this.state
+    // const { list } = this.state
     return (
       <View className='registered'>
         <Text className='title'>捐赠者注册</Text>
 
-        <CustomInput label='名称'></CustomInput>
-        <CustomInput label='所在地'></CustomInput>
-        <View className='type'>
+        <CustomInput
+          label='名称'
+          onInput={e => this.handleChange(e.target.value, 'orgName')}
+        ></CustomInput>
+        <CustomInput
+          label='所在地'
+          onInput={e => this.handleChange(e.target.value, 'supplierLocation')}
+        ></CustomInput>
+        {/* <View className='type'>
           <View className='sub-title'>规模资质</View>
           <View className='select'>
             {list.map(item => (
               <View key={item.value}>{this.renderTag(item)}</View>
             ))}
           </View>
-        </View>
+        </View> */}
+
+        <AtButton onClick={this.handleSubmit}></AtButton>
       </View>
     )
   }

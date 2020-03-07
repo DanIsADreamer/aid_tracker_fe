@@ -1,6 +1,8 @@
 import Taro from '@tarojs/taro'
-import { HTTP_STATUS } from '../constants/status'
-import { getCurrentPageUrl } from '../utils/common'
+import { HTTP_STATUS } from '@constants/status'
+import { getCurrentPageUrl } from '@utils/common'
+import { setGlobalData } from '@utils/global-data'
+import { getGlobalData } from '../utils/global-data'
 
 function showError(message, show = true) {
   show &&
@@ -47,8 +49,24 @@ const customInterceptor = function(chain) {
       } else if (res.statusCode >= 400) {
         const errorMsg = res.data && res.data.message
         return showError(errorMsg, showToast)
+      } else if (
+        res.statusCode >= HTTP_STATUS.SUCCESS &&
+        res.data.resCode === 401
+      ) {
+        setGlobalData('baseToken', res.header.baseToken)
+        console.log(getGlobalData('role'))
+        if (getGlobalData('role') === '' || !getGlobalData('role')) {
+          Taro.navigateTo({
+            url: '/pages/login/index'
+          })
+        } else {
+          Taro.navigateTo({
+            url: `/pages/registered/index?id=${res.data.userInfo.id}`
+          })
+        }
+        return res
       } else {
-        return res.data
+        return res
       }
     })
 }

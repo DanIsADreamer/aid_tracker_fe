@@ -1,4 +1,5 @@
 import Taro from '@tarojs/taro'
+import { getGlobalData } from '@utils/global-data'
 import BASE_URL from './config'
 import interceptors from './interceptors'
 
@@ -14,7 +15,9 @@ export default {
       data: data,
       method: method,
       header: {
-        'content-type': contentType
+        'content-type': contentType,
+        baseToken: getGlobalData('baseToken'),
+        accessToken: getGlobalData('accessToken')
         // Authorization: Taro.getStorageSync("Authorization")
       }
     }

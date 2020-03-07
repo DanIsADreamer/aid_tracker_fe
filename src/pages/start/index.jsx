@@ -4,14 +4,29 @@ import { getAuthUser } from '@utils/auth'
 import './index.scss'
 
 export default class Index extends Component {
-  componentDidMount() {
+  async componentDidMount() {
     Taro.showLoading({
       title: '加载中'
     })
 
-    getAuthUser().then(res => {
-      console.log(res)
-    })
+    try {
+      const res = await getAuthUser()
+      if (res.role && res.role !== '') {
+        Taro.switchTab({
+          url: '/pages/index/index'
+        })
+      } else {
+        Taro.navigateTo({
+          url: '/pages/login/index'
+        })
+      }
+    } catch (error) {
+      Taro.navigateTo({
+        url: '/pages/login/index'
+      })
+    } finally {
+      Taro.hideLoading()
+    }
   }
 
   config = {}

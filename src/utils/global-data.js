@@ -1,5 +1,8 @@
 const globalData = {
-  role: 'Donor'
+  role: '',
+  baseToken: '',
+  accessToken: '',
+  userInfo: ''
 }
 
 export const setGlobalData = (key, value) => {

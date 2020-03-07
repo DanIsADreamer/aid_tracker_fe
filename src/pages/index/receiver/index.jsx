@@ -4,11 +4,10 @@ import { AtButton } from 'taro-ui'
 import './index.scss'
 
 export default class Index extends Component {
-
   config = {}
 
   handleClick = () => {
-    Taro.switchTab({
+    Taro.navigateTo({
       url: '/pages/login/index'
     })
   }
