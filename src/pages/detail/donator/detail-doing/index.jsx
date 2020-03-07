@@ -36,7 +36,7 @@ export default class Index extends Component {
         <View className='detail-doing-top'>
           <Card customStyle={{ margin: '12rpx 0 57rpx 0' }}>
             <CardTitle title={detail.title}></CardTitle>
-            <CardStatus></CardStatus>
+            <CardStatus status='对接中'></CardStatus>
             <CardProgress
               totalCount={detail.count}
               finishCount={detail.finishCount}

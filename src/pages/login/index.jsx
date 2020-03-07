@@ -20,6 +20,9 @@ export default class Index extends Component {
     Taro.switchTab({
       url: '/pages/index/index'
     })
+    // Taro.navigateTo({
+    //   url: '/pages/registered/index'
+    // })
   }
 
   render() {

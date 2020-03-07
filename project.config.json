@@ -59,6 +59,13 @@
 					"id": -1,
 					"name": "pages/detail/donator/detail-doing/index",
 					"pathName": "pages/detail/donator/detail-doing/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/registered/index",
+					"pathName": "pages/registered/index",
 					"scene": null
 				}
 			]

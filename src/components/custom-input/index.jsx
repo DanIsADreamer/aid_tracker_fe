@@ -26,7 +26,6 @@ export default class CustomInput extends Component {
     } = this.props
 
     const rootStyle = Object.assign({ padding: '5px 0' }, customStyle)
-
     return (
       <View style={rootStyle}>
         {label && <View className='label'>{label + ':'}</View>}
