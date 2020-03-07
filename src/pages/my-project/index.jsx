@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
-import { getGlobalData } from '@utils/global-data'
+import { isDonor, isReceiver } from '@utils/role'
 import Donator from './donator'
 import Receiver from './receiver'
 import './index.scss'
@@ -13,12 +13,10 @@ export default class Index extends Component {
   }
 
   render() {
-    const isDonor = getGlobalData('role') === 'Donor'
-    const isReceiver = getGlobalData('role') === 'Receiver'
     return (
       <View style='height: 100%'>
-        {isDonor && <Donator></Donator>}
-        {isReceiver && <Receiver></Receiver>}
+        {isDonor() && <Donator></Donator>}
+        {isReceiver() && <Receiver></Receiver>}
       </View>
     )
   }

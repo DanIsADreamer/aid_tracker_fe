@@ -1,17 +1,18 @@
 import Taro, { Component } from '@tarojs/taro'
 import { View } from '@tarojs/components'
+import { getAuthUser } from '@utils/auth'
 import './index.scss'
 
 export default class Index extends Component {
-  componentWillMount() {}
+  componentDidMount() {
+    Taro.showLoading({
+      title: '加载中'
+    })
 
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
-  componentDidShow() {}
-
-  componentDidHide() {}
+    getAuthUser().then(res => {
+      console.log(res)
+    })
+  }
 
   config = {}
 

@@ -2,6 +2,23 @@
 
 > 请严格要求与对待
 
+## 开始
+
+- 安装 Taro 2.0.5
+
+```
+  npm install -g @tarojs/cli@2.0.5
+```
+
+- 安装项目配置,并执行
+
+```
+  npm install
+  npm run dev:weapp
+```
+
+- 打开小程序开发者工具即可看到
+
 ## 代码提交规范：
 
 - git add / git commit（commit 规范见下面）

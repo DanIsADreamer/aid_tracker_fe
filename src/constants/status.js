@@ -17,3 +17,5 @@ export const REFRESH_STATUS = {
   REFRESHING: 1,
   NO_MORE_DATA: 2
 }
+
+export const MSG_GET_USERINFO_OK = 'getUserInfo:ok'
