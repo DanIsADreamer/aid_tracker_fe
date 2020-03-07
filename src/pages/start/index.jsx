@@ -11,6 +11,7 @@ export default class Index extends Component {
 
     try {
       const res = await getAuthUser()
+      console.log(res)
       if (res.role && res.role !== '') {
         Taro.switchTab({
           url: '/pages/index/index'
